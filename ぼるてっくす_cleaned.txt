@@ -1,11 +1,17 @@
-local _HttpGet = game.HttpGet
-game.HttpGet = function(self, url, ...)
-    if type(url) == "string" and url:find("msii94Qa") then
-        warn("[Blocked] msii94Qa (FTAP宣伝スクリプト)")
-        return "-- blocked"
+-- ============================================
+-- ★ FTAP チャット投稿ブロッカー
+-- ============================================
+do
+    local _HttpGet = game.HttpGet
+    game.HttpGet = function(self, url, ...)
+        if type(url) == "string" and url:find("msii94Qa") then
+            warn("[Blocked] msii94Qa (FTAP chat spam script)")
+            return "-- blocked"
+        end
+        return _HttpGet(self, url, ...)
     end
-    return _HttpGet(self, url, ...)
 end
+-- ============================================
 local A={}A.s={type=type,tostring=tostring,pairs=pairs,pcall=pcall,print=print,error=error}function A.e()if not getgenv or not getgenv()then return false end local a=getgenv()return a==getgenv()end function A.f()for k,v in pairs(A.s)do if _G[k]and _G[k]~=v then return false end end return true end function A.d()if debug and debug.getinfo then local a,b=pcall(debug.getinfo,1)return a and b end return true end function A.v()local t={A="1",B="2",C="3"}for k,v in pairs(t)do if t[k]~=v then return false end end return true end for _,v in pairs({A.e,A.f,A.d,A.v})do if not v()then while true do task.wait()end end end
 
 local repo = "https://raw.githubusercontent.com/qvdc/Modified-Obsidian/main/"
